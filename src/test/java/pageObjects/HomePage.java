@@ -11,23 +11,22 @@ public class HomePage extends BasePage {
     @FindBy(linkText = "Register")
     WebElement registerBtn;
 
-    @FindBy(id="carousel-banner-0")
+    @FindBy(id = "carousel-banner-0")
     WebElement carouselElement;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickAccount(){
+    public void clickAccount() {
         sleep(1000);
         click(myAccountBtn);
     }
 
-    public void clickRegister(){
+    public void clickRegister() {
         sleep(1000);
         click(registerBtn);
     }
-
 
 
     public boolean isCarouselElementExists() {

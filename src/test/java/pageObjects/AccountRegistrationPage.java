@@ -63,5 +63,4 @@ public class AccountRegistrationPage extends BasePage {
 
     }
 
-
 }

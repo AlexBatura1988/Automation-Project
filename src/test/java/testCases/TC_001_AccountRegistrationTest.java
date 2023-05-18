@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.AccountRegistrationPage;
 import pageObjects.HomePage;
+import testBase.BaseTest;
 
 public class TC_001_AccountRegistrationTest extends BaseTest {
 
@@ -16,10 +17,10 @@ public class TC_001_AccountRegistrationTest extends BaseTest {
             homePage.clickRegister();
 
             AccountRegistrationPage regPage = new AccountRegistrationPage(driver);
-            regPage.setFirstName("alex");
-            regPage.setLastName("batura");
-            regPage.setEmail("test1234@gmail.com");
-            regPage.setPassword("1234");
+            regPage.setFirstName(randomString().toUpperCase());
+            regPage.setLastName(randomString().toUpperCase());
+            regPage.setEmail(randomString() + "@gmail.com");
+            regPage.setPassword(randomAlphaNumeric());
             regPage.setCheckPolicyBtn();
             regPage.clickContinue();
             regPage.sleep(2000);
@@ -30,8 +31,6 @@ public class TC_001_AccountRegistrationTest extends BaseTest {
             Assert.fail();
         }
 
-
     }
-
 
 }
