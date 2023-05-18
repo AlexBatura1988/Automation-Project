@@ -1,0 +1,1 @@
+{"uuid":"8661ee9a-2489-48c7-bddc-6a3548f61f02","name":"testCases.TC_001_AccountRegistrationTest","children":["425aab02-ec60-40c8-9cb3-8a86b47ab8b5"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1684434281577,"stop":1684434288397}],"afters":[],"start":1684434281464,"stop":1684434300326}
