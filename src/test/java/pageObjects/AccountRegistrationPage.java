@@ -21,7 +21,7 @@ public class AccountRegistrationPage extends BasePage {
     @FindBy(css = "#input-password")
     WebElement passwordTxt;
 
-    @FindBy(css = "[name='agree']")
+    @FindBy(css = "#form-register>div>div>input")
     WebElement checkPolicyBtn;
 
     @FindBy(css = ".btn.btn-primary")

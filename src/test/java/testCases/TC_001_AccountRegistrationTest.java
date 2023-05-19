@@ -26,6 +26,7 @@ public class TC_001_AccountRegistrationTest extends BaseTest {
             regPage.setLastName(randomString().toUpperCase());
             regPage.setEmail(randomString() + "@gmail.com");
             regPage.setPassword(randomAlphaNumeric());
+            regPage.sleep(1000);
             regPage.setCheckPolicyBtn();
             regPage.clickContinue();
             logger.info("******** Clicked on continue **********");
