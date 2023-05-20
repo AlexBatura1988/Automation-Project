@@ -10,9 +10,8 @@ public class HomePage extends BasePage {
     WebElement myAccountBtn;
     @FindBy(linkText = "Register")
     WebElement registerBtn;
-
-    @FindBy(id = "carousel-banner-0")
-    WebElement carouselElement;
+    @FindBy(linkText = "Login")
+    WebElement loginBtn;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -28,8 +27,10 @@ public class HomePage extends BasePage {
         click(registerBtn);
     }
 
-
-    public boolean isCarouselElementExists() {
-        return carouselElement != null;
+    public void clickLogin() {
+        sleep(1000);
+        click(loginBtn);
     }
+
+
 }

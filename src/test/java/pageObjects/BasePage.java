@@ -20,6 +20,7 @@ public class BasePage {
 
     public void click(WebElement el) {
         el.click();
+        sleep(2000);
     }
 
     public String getText(WebElement el) {
