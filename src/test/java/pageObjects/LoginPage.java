@@ -12,6 +12,8 @@ public class LoginPage extends BasePage {
     WebElement txtPassword;
     @FindBy(css = "button.btn.btn-primary")
     WebElement loginBtn;
+    @FindBy(css = "#alert")
+    WebElement errorMsg;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -27,6 +29,10 @@ public class LoginPage extends BasePage {
 
     public void clickLogin() {
         click(loginBtn);
+    }
+
+    public String getErrorMsg() {
+        return getText(errorMsg);
     }
 
 }

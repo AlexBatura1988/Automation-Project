@@ -2,29 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-23T13:48:48 IDT" name="Test Suite" finished-at="2023-05-23T13:49:40 IDT" duration-ms="52678">
+  <suite started-at="2023-05-23T14:51:07 IDT" name="Test Suite" finished-at="2023-05-23T14:51:45 IDT" duration-ms="37421">
     <groups>
     </groups>
-    <test started-at="2023-05-23T13:48:48 IDT" name="Test" finished-at="2023-05-23T13:49:40 IDT" duration-ms="52678">
-      <class name="testCases.TC_001_AccountRegistrationTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.TC_001_AccountRegistrationTest@4bdc8b5d]" started-at="2023-05-23T13:48:48 IDT" name="setup" finished-at="2023-05-23T13:48:58 IDT" duration-ms="10380" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="test_account_Registration()[pri:0, instance:testCases.TC_001_AccountRegistrationTest@4bdc8b5d]" started-at="2023-05-23T13:48:58 IDT" name="test_account_Registration" finished-at="2023-05-23T13:49:24 IDT" duration-ms="25980" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_account_Registration -->
-      </class> <!-- testCases.TC_001_AccountRegistrationTest -->
+    <test started-at="2023-05-23T14:51:07 IDT" name="Test" finished-at="2023-05-23T14:51:45 IDT" duration-ms="37421">
       <class name="testCases.TC_002_LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.TC_002_LoginTest@7a799159]" started-at="2023-05-23T13:49:24 IDT" name="setup" finished-at="2023-05-23T13:49:27 IDT" duration-ms="2903" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.TC_002_LoginTest@5d1e09bc]" started-at="2023-05-23T14:51:07 IDT" name="setup" finished-at="2023-05-23T14:51:18 IDT" duration-ms="10769" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,7 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test_login()[pri:0, instance:testCases.TC_002_LoginTest@7a799159]" started-at="2023-05-23T13:49:27 IDT" name="test_login" finished-at="2023-05-23T13:49:40 IDT" duration-ms="13172" status="PASS">
+        <test-method signature="test_login_failed()[pri:1, instance:testCases.TC_002_LoginTest@5d1e09bc]" started-at="2023-05-23T14:51:18 IDT" name="test_login_failed" finished-at="2023-05-23T14:51:32 IDT" duration-ms="13469" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_login_failed -->
+        <test-method signature="test_login()[pri:2, instance:testCases.TC_002_LoginTest@5d1e09bc]" started-at="2023-05-23T14:51:32 IDT" name="test_login" finished-at="2023-05-23T14:51:45 IDT" duration-ms="12923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login -->
