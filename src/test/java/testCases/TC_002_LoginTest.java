@@ -6,6 +6,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import testBase.BaseTest;
+import utilities.AllureAttachment;
 
 public class TC_002_LoginTest extends BaseTest {
 
@@ -44,16 +45,15 @@ public class TC_002_LoginTest extends BaseTest {
             lp.setTxtEmail(rb.getString("email_1"));
             lp.setTxtPassword(rb.getString("password_1"));
             lp.clickLogin();
-            String expectedMsg = "Warning: No match for E-Mail Address and/or Password.";
+            String expectedMsg = "Warning: No match for E-Mail Address and/or Password";
             String actualMsg = lp.getErrorMsg();
             Assert.assertEquals(actualMsg, expectedMsg);
 
-
             logger.info("****Finished TC_002_LoginTest****");
+            AllureAttachment.addTextAttachment("Alex Batura Rules");
         }catch (Exception e){
             Assert.fail();
         }
         logger.info("****Finished TC_002_LoginTest****");
-
     }
 }

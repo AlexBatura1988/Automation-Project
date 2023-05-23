@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -30,7 +31,7 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters("browser")
-    public void setup(String br) {
+    public void setup(ITestContext testContext, String br) {
         rb = ResourceBundle.getBundle("config");
         logger = LogManager.getLogger(this.getClass());
 //        ChromeOptions options = new ChromeOptions();
@@ -49,6 +50,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         //driver.get("http://localhost/opencart/upload/index.php");
+        testContext.setAttribute("WebDriver", driver);
         driver.get(rb.getString("appURL"));
     }
 

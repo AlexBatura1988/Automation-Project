@@ -4,5 +4,7 @@ testBase\BaseTest.class
 pageObjects\HomePage.class
 testCases\TC_001_AccountRegistrationTest.class
 pageObjects\MyAccountPage.class
+utilities\AllureAttachment.class
 pageObjects\AccountRegistrationPage.class
+utilities\ListenerClass.class
 testCases\TC_002_LoginTest.class
