@@ -34,6 +34,9 @@ public class AccountRegistrationPage extends BasePage {
     @FindBy(css = "#content>h1")
     WebElement msgConfirmation;
 
+    @FindBy(css = "#error-firstname")
+    WebElement errorMsgEmptyFirstName;
+
     public void setFirstName(String fname) {
         fillText(firstNameTxt, fname);
     }
@@ -56,7 +59,9 @@ public class AccountRegistrationPage extends BasePage {
         checkPolicyBtn.click();
     }
 
-    public WebElement getCheckPolicyBtn() { return checkPolicyBtn; }
+    public WebElement getCheckPolicyBtn() {
+        return checkPolicyBtn;
+    }
 
     public void clickContinue() {
         click(continueBtn);
@@ -69,6 +74,10 @@ public class AccountRegistrationPage extends BasePage {
             return (e.getMessage());
         }
 
+    }
+
+    public String getErrorMsgFirstName() {
+        return getText(errorMsgEmptyFirstName);
     }
 
     public void moveToElement(WebElement element) {
