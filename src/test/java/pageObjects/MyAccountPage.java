@@ -8,6 +8,8 @@ public class MyAccountPage extends BasePage {
 
     @FindBy(css = "#content>h2:nth-child(1)")
     WebElement msgHeading;
+    @FindBy(css = "a:nth-child(13)")
+    WebElement logoutBtn;
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
@@ -20,5 +22,9 @@ public class MyAccountPage extends BasePage {
             return false;
         }
 
+    }
+
+    public void clickLogout() {
+        click(logoutBtn);
     }
 }

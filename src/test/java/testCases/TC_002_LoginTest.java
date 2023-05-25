@@ -26,6 +26,7 @@ public class TC_002_LoginTest extends BaseTest {
             MyAccountPage myAccountPage = new MyAccountPage(driver);
             boolean targetPage = myAccountPage.isMyAccountPageExist();
             Assert.assertEquals(targetPage, true);
+
         }catch (Exception e){
             Assert.fail();
         }
