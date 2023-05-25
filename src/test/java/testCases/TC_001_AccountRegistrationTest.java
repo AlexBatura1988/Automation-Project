@@ -1,5 +1,8 @@
 package testCases;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.AccountRegistrationPage;
@@ -26,11 +29,8 @@ public class TC_001_AccountRegistrationTest extends BaseTest {
             regPage.setLastName(randomString().toUpperCase());
             regPage.setEmail(randomString() + "@gmail.com");
             regPage.setPassword(randomAlphaNumeric());
-            regPage.sleep(2000);
             regPage.setCheckPolicyBtn();
-            regPage.sleep(2000);
             regPage.clickContinue();
-            regPage.sleep(2000);
             logger.info("******** Clicked on continue **********");
             String actualConfirmMsg = regPage.getConfirmationMsg();
             logger.info("******** Validating expected message **********");

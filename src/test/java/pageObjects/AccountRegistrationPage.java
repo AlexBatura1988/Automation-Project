@@ -1,7 +1,11 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class AccountRegistrationPage extends BasePage {
@@ -21,7 +25,7 @@ public class AccountRegistrationPage extends BasePage {
     @FindBy(css = "#input-password")
     WebElement passwordTxt;
 
-    @FindBy(css = "#form-register>div>div>input")
+    @FindBy(css = ".text-end .form-check-input")
     WebElement checkPolicyBtn;
 
     @FindBy(css = ".btn.btn-primary")
@@ -47,8 +51,12 @@ public class AccountRegistrationPage extends BasePage {
     }
 
     public void setCheckPolicyBtn() {
-        click(checkPolicyBtn);
+        moveToElement(checkPolicyBtn);
+        sleep(300);
+        checkPolicyBtn.click();
     }
+
+    public WebElement getCheckPolicyBtn() { return checkPolicyBtn; }
 
     public void clickContinue() {
         click(continueBtn);
@@ -61,6 +69,14 @@ public class AccountRegistrationPage extends BasePage {
             return (e.getMessage());
         }
 
+    }
+
+    public void moveToElement(WebElement element) {
+        Rectangle rect = element.getRect();
+        int deltaY = rect.y + rect.height;
+
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(0, deltaY).perform();
     }
 
 }

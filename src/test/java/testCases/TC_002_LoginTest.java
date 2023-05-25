@@ -45,7 +45,7 @@ public class TC_002_LoginTest extends BaseTest {
             lp.setTxtEmail(rb.getString("email_1"));
             lp.setTxtPassword(rb.getString("password_1"));
             lp.clickLogin();
-            String expectedMsg = "Warning: No match for E-Mail Address and/or Password";
+            String expectedMsg = "Warning: No match for E-Mail Address and/or Password.";
             String actualMsg = lp.getErrorMsg();
             Assert.assertEquals(actualMsg, expectedMsg);
 

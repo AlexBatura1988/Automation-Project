@@ -34,9 +34,6 @@ public class BaseTest {
     public void setup(ITestContext testContext, String br) {
         rb = ResourceBundle.getBundle("config");
         logger = LogManager.getLogger(this.getClass());
-//        ChromeOptions options = new ChromeOptions();
-//        options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
-//        WebDriverManager.chromedriver().setup();
 
         if (br.equals("chrome")) {
             driver = new ChromeDriver();

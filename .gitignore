@@ -4,5 +4,5 @@
 .idea/
 allure-results/
 .allure
-logs
+/logs/automation.log
 target
