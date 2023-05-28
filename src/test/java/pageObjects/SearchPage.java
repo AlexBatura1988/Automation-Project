@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.AllureAttachment;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class SearchPage extends BasePage {
         boolean flag = false;
         for (WebElement product : searchProducts) {
             String productNameText = product.findElement(By.cssSelector(".description>h4>a")).getText();
-            if(productNameText.equals(name)) {
+            if (productNameText.equals(name)) {
                 flag = true;
                 break;
             }
@@ -31,9 +32,10 @@ public class SearchPage extends BasePage {
     public void selectProduct(String name) {
         for (WebElement product : searchProducts) {
             String productNameText = product.findElement(By.cssSelector(".description>h4>a")).getText();
-            if(productNameText.equals(name)) {
-                 click(product);
-                 break;
+            if (productNameText.equals(name)) {
+                AllureAttachment.attachElementScreenshot(product);
+                click(product);
+                break;
             }
         }
 
