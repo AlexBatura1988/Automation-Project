@@ -15,6 +15,7 @@ public class TC_002_LoginTest extends BaseTest {
         try {
             logger.info("****Starting TC_002_LoginTest****");
             HomePage hp = new HomePage(driver);
+            hp.sleep(2000);
             hp.clickAccount();
             hp.clickLogin();
 
@@ -35,7 +36,7 @@ public class TC_002_LoginTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void test_login_failed() {
+    public void test_login_failed()  {
         try {
             logger.info("****Starting TC_002_LoginTest****");
             HomePage hp = new HomePage(driver);
@@ -50,10 +51,11 @@ public class TC_002_LoginTest extends BaseTest {
             String actualMsg = lp.getErrorMsg();
             Assert.assertEquals(actualMsg, expectedMsg);
 
-            logger.info("****Finished TC_002_LoginTest****");
             AllureAttachment.addTextAttachment("Alex Batura Rules");
         }catch (Exception e){
             Assert.fail();
+
+
         }
         logger.info("****Finished TC_002_LoginTest****");
     }

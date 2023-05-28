@@ -12,6 +12,10 @@ public class HomePage extends BasePage {
     WebElement registerBtn;
     @FindBy(linkText = "Login")
     WebElement loginBtn;
+    @FindBy(css = "#search>input")
+    WebElement searchTxt;
+    @FindBy(css = "#search>button")
+    WebElement searchBtn;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,6 +34,14 @@ public class HomePage extends BasePage {
     public void clickLogin() {
         sleep(1000);
         click(loginBtn);
+    }
+
+    public void enterProductName(String name) {
+        fillText(searchTxt, name);
+    }
+
+    public void clickSearch() {
+        click(searchBtn);
     }
 
 
