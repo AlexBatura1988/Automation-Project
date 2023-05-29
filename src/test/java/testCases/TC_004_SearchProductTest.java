@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.SearchPage;
 import testBase.BaseTest;
+import utilities.AllureAttachment;
 
 public class TC_004_SearchProductTest extends BaseTest {
     @Test(priority = 1)
@@ -29,6 +30,7 @@ public class TC_004_SearchProductTest extends BaseTest {
             Assert.fail();
         }
         logger.info(" Finished TC_004_SearchProductTest ");
+        AllureAttachment.attachURL("http://localhost/opencart/upload");
     }
 
     @Test(priority = 2)

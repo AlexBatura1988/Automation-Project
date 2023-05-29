@@ -14,4 +14,9 @@ public class AllureAttachment {
     public static byte[] attachElementScreenshot(WebElement element) {
         return element.getScreenshotAs(OutputType.BYTES);
     }
+
+    @Attachment(value = "URL attachment", type = "text/uri-list", fileExtension = ".uri")
+    public static String attachURL(String url) {
+        return url;
+    }
 }
