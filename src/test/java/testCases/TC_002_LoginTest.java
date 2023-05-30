@@ -21,8 +21,8 @@ public class TC_002_LoginTest extends BaseTest {
 
 
         LoginPage lp = new LoginPage(driver);
-            lp.setTxtEmail(rb.getString("email"));
-            lp.setTxtPassword(rb.getString("password"));
+            lp.setTxtEmail(rb.getString("email_2"));
+            lp.setTxtPassword(rb.getString("password_2"));
             lp.clickLogin();
         hp.waiting(3000);
 
