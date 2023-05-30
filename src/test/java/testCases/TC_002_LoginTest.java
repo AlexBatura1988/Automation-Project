@@ -19,10 +19,12 @@ public class TC_002_LoginTest extends BaseTest {
             hp.clickAccount();
             hp.clickLogin();
 
-            LoginPage lp = new LoginPage(driver);
+
+        LoginPage lp = new LoginPage(driver);
             lp.setTxtEmail(rb.getString("email"));
             lp.setTxtPassword(rb.getString("password"));
             lp.clickLogin();
+        hp.waiting(3000);
 
             MyAccountPage myAccountPage = new MyAccountPage(driver);
             boolean targetPage = myAccountPage.isMyAccountPageExist();
