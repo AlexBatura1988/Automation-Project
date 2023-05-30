@@ -22,17 +22,17 @@ public class HomePage extends BasePage {
     }
 
     public void clickAccount() {
-        sleep(1000);
+        waiting(1000);
         click(myAccountBtn);
     }
 
     public void clickRegister() {
-        sleep(1000);
+        waiting(1000);
         click(registerBtn);
     }
 
     public void clickLogin() {
-        sleep(1000);
+        waiting(1000);
         click(loginBtn);
     }
 

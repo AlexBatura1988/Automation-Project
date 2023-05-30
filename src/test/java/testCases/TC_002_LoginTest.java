@@ -12,10 +12,10 @@ public class TC_002_LoginTest extends BaseTest {
 
     @Test(priority = 2)
     public void test_login() {
-        try {
+
             logger.info("****Starting TC_002_LoginTest****");
             HomePage hp = new HomePage(driver);
-            hp.sleep(2000);
+            hp.waiting(2000);
             hp.clickAccount();
             hp.clickLogin();
 
@@ -28,16 +28,14 @@ public class TC_002_LoginTest extends BaseTest {
             boolean targetPage = myAccountPage.isMyAccountPageExist();
             Assert.assertEquals(targetPage, true);
 
-        }catch (Exception e){
-            Assert.fail();
-        }
+
         logger.info("****Finished TC_002_LoginTest****");
 
     }
 
     @Test(priority = 1)
     public void test_login_failed()  {
-        try {
+
             logger.info("****Starting TC_002_LoginTest****");
             HomePage hp = new HomePage(driver);
             hp.clickAccount();
@@ -52,11 +50,7 @@ public class TC_002_LoginTest extends BaseTest {
             Assert.assertEquals(actualMsg, expectedMsg);
 
             AllureAttachment.addTextAttachment("Alex Batura Rules");
-        }catch (Exception e){
-            Assert.fail();
 
-
-        }
         logger.info("****Finished TC_002_LoginTest****");
     }
 }

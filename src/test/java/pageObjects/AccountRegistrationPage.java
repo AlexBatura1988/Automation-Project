@@ -1,10 +1,8 @@
 package pageObjects;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
@@ -55,7 +53,7 @@ public class AccountRegistrationPage extends BasePage {
 
     public void setCheckPolicyBtn() {
         moveToElement(checkPolicyBtn);
-        sleep(300);
+        waiting(300);
         checkPolicyBtn.click();
     }
 

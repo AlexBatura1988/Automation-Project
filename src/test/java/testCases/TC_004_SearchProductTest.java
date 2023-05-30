@@ -17,11 +17,11 @@ public class TC_004_SearchProductTest extends BaseTest {
             HomePage homePage = new HomePage(driver);
             homePage.enterProductName("mac");
             homePage.clickSearch();
-            homePage.sleep(1000);
+            homePage.waiting(1000);
 
             SearchPage searchPage = new SearchPage(driver);
             searchPage.isProductExist("MacBook");
-            homePage.sleep(1000);
+            homePage.waiting(1000);
 
             Assert.assertEquals(searchPage.isProductExist("MacBook"), true);
 
@@ -40,11 +40,11 @@ public class TC_004_SearchProductTest extends BaseTest {
             HomePage homePage = new HomePage(driver);
             homePage.enterProductName("mac");
             homePage.clickSearch();
-            homePage.sleep(1000);
+            homePage.waiting(1000);
 
             SearchPage searchPage = new SearchPage(driver);
             searchPage.selectProduct("MacBook Air");
-            homePage.sleep(2000);
+            homePage.waiting(2000);
             String expected = "MacBook Air";
             WebElement el = driver.findElement(By.cssSelector(".col-sm>h1"));
             String actual =el.getText();

@@ -14,13 +14,13 @@ public class BasePage {
 
     public void fillText(WebElement el, String text) {
         el.clear();
-        sleep(1000);
+        waiting(1000);
         el.sendKeys(text);
     }
 
     public void click(WebElement el) {
         el.click();
-        sleep(1000);
+        waiting(1000);
     }
 
     public String getText(WebElement el) {
@@ -31,7 +31,7 @@ public class BasePage {
         el.clear();
     }
 
-    public void sleep(long mills) {
+    public void waiting(long mills) {
         try {
             Thread.sleep(mills);
         } catch (InterruptedException e) {
