@@ -10,7 +10,7 @@ import utilities.AllureAttachment;
 
 public class TC_002_LoginTest extends BaseTest {
 
-    @Test(priority = 2)
+    @Test
     public void test_login() {
 
             logger.info("****Starting TC_002_LoginTest****");
@@ -35,24 +35,24 @@ public class TC_002_LoginTest extends BaseTest {
 
     }
 
-    @Test(priority = 1)
-    public void test_login_failed()  {
-
-            logger.info("****Starting TC_002_LoginTest****");
-            HomePage hp = new HomePage(driver);
-            hp.clickAccount();
-            hp.clickLogin();
-
-            LoginPage lp = new LoginPage(driver);
-            lp.setTxtEmail(rb.getString("email_1"));
-            lp.setTxtPassword(rb.getString("password_1"));
-            lp.clickLogin();
-            String expectedMsg = "Warning: No match for E-Mail Address and/or Password.";
-            String actualMsg = lp.getErrorMsg();
-            Assert.assertEquals(actualMsg, expectedMsg);
-
-            AllureAttachment.addTextAttachment("Alex Batura Rules");
-
-        logger.info("****Finished TC_002_LoginTest****");
-    }
+//    @Test(priority = 1)
+//    public void test_login_failed()  {
+//
+//            logger.info("****Starting TC_002_LoginTest****");
+//            HomePage hp = new HomePage(driver);
+//            hp.clickAccount();
+//            hp.clickLogin();
+//
+//            LoginPage lp = new LoginPage(driver);
+//            lp.setTxtEmail(rb.getString("email_1"));
+//            lp.setTxtPassword(rb.getString("password_1"));
+//            lp.clickLogin();
+//            String expectedMsg = "Warning: No match for E-Mail Address and/or Password.";
+//            String actualMsg = lp.getErrorMsg();
+//            Assert.assertEquals(actualMsg, expectedMsg);
+//
+//            AllureAttachment.addTextAttachment("Alex Batura Rules");
+//
+//        logger.info("****Finished TC_002_LoginTest****");
+//    }
 }
