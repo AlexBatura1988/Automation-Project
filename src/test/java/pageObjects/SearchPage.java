@@ -12,7 +12,6 @@ public class SearchPage extends BasePage {
     @FindBy(css = "#product-list>div")
     List<WebElement> searchProducts;
 
-
     public SearchPage(WebDriver driver) {
         super(driver);
     }
