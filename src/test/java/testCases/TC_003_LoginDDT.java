@@ -13,7 +13,6 @@ public class TC_003_LoginDDT extends BaseTest {
     @Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class)
     public void test_loginDDT(String email, String password, String exp) {
         logger.info("****Starting TC_003_LoginDDT*****");
-        try {
 
             HomePage homePage = new HomePage(driver);
             homePage.clickAccount();
@@ -45,9 +44,6 @@ public class TC_003_LoginDDT extends BaseTest {
                     Assert.assertTrue(true);
                 }
             }
-        } catch (Exception e) {
-            Assert.fail();
-        }
         logger.info("****Finished TC_003_LoginDDT*****");
     }
 }
