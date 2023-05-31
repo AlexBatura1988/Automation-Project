@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 //http://localhost/opencart/upload/
 public class HomePage extends BasePage {
-    @FindBy(xpath = "//span[text()='My Account']")
+    @FindBy(css = "li:nth-child(2)>div>a>span")
     WebElement myAccountBtn;
     @FindBy(linkText = "Register")
     WebElement registerBtn;
