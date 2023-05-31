@@ -1,5 +1,9 @@
 package testCases;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.HomePage;
@@ -7,6 +11,8 @@ import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import testBase.BaseTest;
 import utilities.DataProviders;
+
+import java.time.Duration;
 
 public class TC_003_LoginDDT extends BaseTest {
 
@@ -29,8 +35,10 @@ public class TC_003_LoginDDT extends BaseTest {
 
             if (exp.equals("Valid")) {
                 if (targetPage == true) {
-                    myAccountPage.waiting(3000);
-                    myAccountPage.clickLogout();
+                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust the timeout as needed
+                    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a:nth-child(13)")));
+                    element.click();
+                    //myAccountPage.clickLogout();
                     Assert.assertTrue(true);
                 } else {
                     Assert.assertTrue(false);
