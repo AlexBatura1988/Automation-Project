@@ -10,6 +10,10 @@ public class MyAccountPage extends BasePage {
     WebElement msgHeading;
     @FindBy(css = "a:nth-child(13)")
     WebElement logoutBtn;
+    @FindBy(css = "li:nth-child(2)>div>a>span")
+    WebElement myAccountBtn;
+    @FindBy(css = " li:nth-child(2)>div ul>li:nth-child(5)")
+    WebElement logOtBtn;
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
@@ -26,5 +30,12 @@ public class MyAccountPage extends BasePage {
 
     public void clickLogout() {
         click(logoutBtn);
+    }
+    public void clickMyAccountBtn(){
+        click(myAccountBtn);
+    }
+
+    public void clickLOBtn(){
+        click(logOtBtn);
     }
 }

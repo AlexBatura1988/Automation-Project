@@ -35,9 +35,9 @@ public class TC_003_LoginDDT extends BaseTest {
 
             if (exp.equals("Valid")) {
                 if (targetPage == true) {
-                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust the timeout as needed
-                    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a:nth-child(13)")));
-                    element.click();
+                   myAccountPage.waiting(2000);
+                    myAccountPage.clickMyAccountBtn();
+                    myAccountPage.clickLOBtn();
                     //myAccountPage.clickLogout();
                     Assert.assertTrue(true);
                 } else {
