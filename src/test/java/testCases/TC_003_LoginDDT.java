@@ -29,6 +29,7 @@ public class TC_003_LoginDDT extends BaseTest {
 
             if (exp.equals("Valid")) {
                 if (targetPage == true) {
+                    myAccountPage.waiting(3000);
                     myAccountPage.clickLogout();
                     Assert.assertTrue(true);
                 } else {
