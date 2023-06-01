@@ -1,7 +1,9 @@
 package pageObjects;
 
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
@@ -29,6 +31,14 @@ public class BasePage {
 
     public void clear(WebElement el) {
         el.clear();
+    }
+
+    public void moveToElement(WebElement element) {
+        Rectangle rect = element.getRect();
+        int deltaY = rect.y + rect.height;
+
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(0, deltaY).perform();
     }
 
     public void waiting(long mills) {

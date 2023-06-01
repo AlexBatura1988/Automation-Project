@@ -14,6 +14,8 @@ public class MyAccountPage extends BasePage {
     WebElement myAccountBtn;
     @FindBy(css = " li:nth-child(2)>div ul>li:nth-child(5)")
     WebElement logOtBtn;
+    @FindBy(css = "#content>h1")
+    WebElement msgLogout;
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
@@ -37,5 +39,8 @@ public class MyAccountPage extends BasePage {
 
     public void clickLOBtn(){
         click(logOtBtn);
+    }
+    public String getMsgLogout() {
+        return msgLogout.getText();
     }
 }

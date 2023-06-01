@@ -46,7 +46,7 @@ public class TC_005_ItemDetailsTest extends BaseTest {
         ItemDetailsPage itemDetailsPage = new ItemDetailsPage(driver);
         itemDetailsPage.setTxtQuantity("2");
         itemDetailsPage.clickAddToCard();
-        itemDetailsPage.waiting(3000);
+        itemDetailsPage.waiting(2000);
         String actual = itemDetailsPage.getElText();
         String exp = "2 item(s) - $2,404.00";
         Assert.assertEquals(actual, exp);

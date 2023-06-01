@@ -78,12 +78,6 @@ public class AccountRegistrationPage extends BasePage {
         return getText(errorMsgEmptyFirstName);
     }
 
-    public void moveToElement(WebElement element) {
-        Rectangle rect = element.getRect();
-        int deltaY = rect.y + rect.height;
 
-        Actions actions = new Actions(driver);
-        actions.scrollByAmount(0, deltaY).perform();
-    }
 
 }

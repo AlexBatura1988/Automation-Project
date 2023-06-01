@@ -11,6 +11,9 @@ public class ItemDetailsPage extends BasePage{
      WebElement txtQuantity;
     @FindBy(css = ".btn.btn-primary.btn-lg.btn-block")
     WebElement addToCardBtn;
+    @FindBy(css = ".nav.float-end>ul>li:nth-child(4)")
+    WebElement shoppingCartBtn;
+
 
     @FindBy(xpath = "//*[@id=\"header-cart\"]/div/button")
     WebElement el;
@@ -34,8 +37,9 @@ public class ItemDetailsPage extends BasePage{
     public void clickAddToCard() {
         click(addToCardBtn);
     }
-
-
+    public void clickShoppingCart() {
+        click(shoppingCartBtn);
+    }
 
 
 }
