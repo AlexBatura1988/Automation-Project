@@ -57,7 +57,7 @@ public class TC_006_EndToEndTest extends BaseTest {
             itemDetailsPage.setTxtQuantity("2");
             itemDetailsPage.clickAddToCard();
         }
-        itemDetailsPage.waiting(4000);
+        itemDetailsPage.waiting(5000);
         String actualCost = itemDetailsPage.getElText();
         String expectedCost = "2 item(s) - $246.40";
         myAssert.assertEquals(actualCost, expectedCost);
