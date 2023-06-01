@@ -75,6 +75,41 @@ public class TC_006_EndToEndTest extends BaseTest {
         shoppingCartPage.moveToCheckoutBtn();
         shoppingCartPage.clickCheckoutBtn();
 
+        //Checkout
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        checkoutPage.waiting(1000);
+        checkoutPage.clickNewAddress();
+        checkoutPage.setFirstName("Alex");
+        checkoutPage.setLastName("Batura");
+        checkoutPage.setCompany("Orizon");
+        checkoutPage.setAddress1("Moshe Sharet");
+        checkoutPage.setAddress2("Halper 19");
+        checkoutPage.setCity("Holon");
+        checkoutPage.setPostCode("0122");
+        checkoutPage.setCountry("Israel");
+        checkoutPage.waiting(1000);
+        checkoutPage.moveToConAddress();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickContinueAddress();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickShipBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickOpShipBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickShipConBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.choosePaymentBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickPaymentOptBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickContinueBtn();
+        checkoutPage.waiting(1000);
+        checkoutPage.moveToConOrder();
+        checkoutPage.waiting(1000);
+        checkoutPage.clickConfirmOrder();
+
+
+
 
 
 
