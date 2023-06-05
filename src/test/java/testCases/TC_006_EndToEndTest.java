@@ -1,5 +1,6 @@
 package testCases;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -8,7 +9,7 @@ import testBase.BaseTest;
 
 public class TC_006_EndToEndTest extends BaseTest {
     @Test
-    public void endToEndTest() {
+    public void endToEndTest() throws InterruptedException {
 
         SoftAssert myAssert = new SoftAssert();
         //Account Registration
@@ -92,6 +93,10 @@ public class TC_006_EndToEndTest extends BaseTest {
         checkoutPage.waiting(1000);
         checkoutPage.clickContinueAddress();
         checkoutPage.waiting(1000);
+
+        checkoutPage.moveToShipBtn();
+
+
         checkoutPage.clickShipBtn();
         checkoutPage.waiting(1000);
         checkoutPage.clickOpShipBtn();
@@ -107,10 +112,6 @@ public class TC_006_EndToEndTest extends BaseTest {
         checkoutPage.moveToConOrder();
         checkoutPage.waiting(1000);
         checkoutPage.clickConfirmOrder();
-
-
-
-
 
 
         myAssert.assertAll();

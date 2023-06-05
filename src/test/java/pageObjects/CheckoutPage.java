@@ -1,7 +1,6 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -28,7 +27,7 @@ public class CheckoutPage extends BasePage {
     WebElement region;
     @FindBy(css = "#button-shipping-address")
     WebElement continueBtn;
-    @FindBy(css = "#button-shipping-methods")
+    @FindBy(css = "#button-shipping-methods.btn")
     WebElement shipBtn;
     @FindBy(css = "#input-shipping-method-flat-flat")
     WebElement shipOptionBtn;
@@ -42,6 +41,7 @@ public class CheckoutPage extends BasePage {
     WebElement paymentContinueBtn;
     @FindBy(css = "#button-confirm.btn")
     WebElement confirmOrderBtn;
+
 
 
 
@@ -124,6 +124,13 @@ public class CheckoutPage extends BasePage {
     public void moveToConOrder() {
         moveToElement(confirmOrderBtn);
     }
+
+    public void moveToShipBtn() {
+        driver.switchTo().activeElement().sendKeys(Keys.HOME);
+    }
+
+
+
 
 
 }

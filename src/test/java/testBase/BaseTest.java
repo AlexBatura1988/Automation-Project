@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -37,7 +38,9 @@ public class BaseTest {
         logger = LogManager.getLogger(this.getClass());
 
         if (br.equals("chrome")) {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--incognito");
+            driver = new ChromeDriver(options);
         } else if (br.equals("edge")) {
             driver = new EdgeDriver();
         } else {

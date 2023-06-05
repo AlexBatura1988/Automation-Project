@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-    WebDriver driver;
+    static WebDriver driver;
+
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -15,12 +17,16 @@ public class BasePage {
     }
 
     public void fillText(WebElement el, String text) {
+        //js.executeScript("arguments[0].setAttribute('style', 'background-color:yellow; border: 1px solid green;');", el);
+        highlightElement(el,"green");
         el.clear();
         waiting(1000);
         el.sendKeys(text);
     }
 
     public void click(WebElement el) {
+        //js.executeScript("arguments[0].setAttribute('style', 'background-color:yellow; border: 1px solid green;');", el);
+        highlightElement(el, "orange");
         el.click();
         waiting(1000);
     }
@@ -47,5 +53,21 @@ public class BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void highlightElement(WebElement element, String color) {
+        //keep the old style to change it back
+        String originalStyle = element.getAttribute("style");
+        String newStyle = "border: 1px solid " + color + ";" + originalStyle;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Change the style
+        js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '" + newStyle + "');},0);",
+                element);
+
+        // Change the style back after few miliseconds
+        js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '"
+                + originalStyle + "');},400);", element);
+
     }
 }
