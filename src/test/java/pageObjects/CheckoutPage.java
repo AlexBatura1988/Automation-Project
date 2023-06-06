@@ -42,9 +42,6 @@ public class CheckoutPage extends BasePage {
     @FindBy(css = "#button-confirm.btn")
     WebElement confirmOrderBtn;
 
-
-
-
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
@@ -52,6 +49,7 @@ public class CheckoutPage extends BasePage {
     public void clickNewAddress() {
         click(newAddressBtn);
     }
+
     public void setFirstName(String fname) {
         fillText(firstName, fname);
     }
@@ -79,7 +77,6 @@ public class CheckoutPage extends BasePage {
     public void setPostCode(String code) {
         fillText(postCode, code);
     }
-
 
     public void setCountry(String country) {
         new Select(countryBtn).selectByVisibleText(country);
@@ -128,9 +125,5 @@ public class CheckoutPage extends BasePage {
     public void moveToShipBtn() {
         driver.switchTo().activeElement().sendKeys(Keys.HOME);
     }
-
-
-
-
 
 }

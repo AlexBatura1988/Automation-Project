@@ -27,19 +27,20 @@ public class MyAccountPage extends BasePage {
         } catch (Exception e) {
             return false;
         }
-
     }
 
     public void clickLogout() {
         click(logoutBtn);
     }
-    public void clickMyAccountBtn(){
+
+    public void clickMyAccountBtn() {
         click(myAccountBtn);
     }
 
-    public void clickLOBtn(){
+    public void clickLOBtn() {
         click(logOtBtn);
     }
+
     public String getMsgLogout() {
         return msgLogout.getText();
     }

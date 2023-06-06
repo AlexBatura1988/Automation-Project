@@ -44,5 +44,4 @@ public class HomePage extends BasePage {
         click(searchBtn);
     }
 
-
 }

@@ -1,7 +1,5 @@
 package testCases;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.*;
@@ -93,9 +91,8 @@ public class TC_006_EndToEndTest extends BaseTest {
         checkoutPage.waiting(1000);
         checkoutPage.clickContinueAddress();
         checkoutPage.waiting(1000);
-
         checkoutPage.moveToShipBtn();
-
+        checkoutPage.waiting(1000);
 
         checkoutPage.clickShipBtn();
         checkoutPage.waiting(1000);
@@ -113,10 +110,6 @@ public class TC_006_EndToEndTest extends BaseTest {
         checkoutPage.waiting(1000);
         checkoutPage.clickConfirmOrder();
 
-
         myAssert.assertAll();
-
-
     }
-
 }

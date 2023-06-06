@@ -10,23 +10,20 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
     static WebDriver driver;
 
-
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     public void fillText(WebElement el, String text) {
-        //js.executeScript("arguments[0].setAttribute('style', 'background-color:yellow; border: 1px solid green;');", el);
-        highlightElement(el,"green");
         el.clear();
         waiting(1000);
+        highlightElement(el, "yellow");
         el.sendKeys(text);
     }
 
     public void click(WebElement el) {
-        //js.executeScript("arguments[0].setAttribute('style', 'background-color:yellow; border: 1px solid green;');", el);
-        highlightElement(el, "orange");
+        highlightElement(el, "yellow");
         el.click();
         waiting(1000);
     }
@@ -35,14 +32,9 @@ public class BasePage {
         return el.getText();
     }
 
-    public void clear(WebElement el) {
-        el.clear();
-    }
-
     public void moveToElement(WebElement element) {
         Rectangle rect = element.getRect();
         int deltaY = rect.y + rect.height;
-
         Actions actions = new Actions(driver);
         actions.scrollByAmount(0, deltaY).perform();
     }
@@ -62,10 +54,11 @@ public class BasePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         // Change the style
-        js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '" + newStyle + "');},0);",
+        js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '"
+                        + newStyle + ";background-color:yellow');},0);",
                 element);
 
-        // Change the style back after few miliseconds
+        // Change the style back after few milliseconds
         js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '"
                 + originalStyle + "');},400);", element);
 

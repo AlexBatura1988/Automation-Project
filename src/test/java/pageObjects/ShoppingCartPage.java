@@ -24,7 +24,6 @@ public class ShoppingCartPage extends BasePage {
         moveToElement(checkoutBtn);
     }
 
-
     public void clickCheckoutBtn() {
         click(checkoutBtn);
     }

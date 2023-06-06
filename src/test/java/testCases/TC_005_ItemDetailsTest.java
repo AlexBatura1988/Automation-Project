@@ -15,12 +15,10 @@ public class TC_005_ItemDetailsTest extends BaseTest {
     @Test
     public void tc_001_productNameTest() {
         logger.info(" Starting TC_005_ItemDetailsTest");
-
         HomePage homePage = new HomePage(driver);
         homePage.enterProductName("mac");
         homePage.clickSearch();
         homePage.waiting(1000);
-
         SearchPage searchPage = new SearchPage(driver);
         searchPage.selectProduct("MacBook Air");
         searchPage.waiting(2000);
@@ -34,12 +32,10 @@ public class TC_005_ItemDetailsTest extends BaseTest {
     @Test
     public void tc_002_addToCartTest() {
         logger.info(" Starting TC_005_ItemDetailsTest");
-
         HomePage homePage = new HomePage(driver);
         homePage.enterProductName("mac");
         homePage.clickSearch();
         homePage.waiting(1000);
-
         SearchPage searchPage = new SearchPage(driver);
         searchPage.selectProduct("MacBook Air");
         searchPage.waiting(1000);
@@ -50,8 +46,6 @@ public class TC_005_ItemDetailsTest extends BaseTest {
         String actual = itemDetailsPage.getElText();
         String exp = "2 item(s) - $2,404.00";
         Assert.assertEquals(actual, exp);
-
-
         logger.info(" Finished TC_005_ItemDetailsTest");
     }
 }

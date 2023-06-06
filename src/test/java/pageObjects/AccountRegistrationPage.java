@@ -1,9 +1,7 @@
 package pageObjects;
 
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class AccountRegistrationPage extends BasePage {
@@ -13,25 +11,18 @@ public class AccountRegistrationPage extends BasePage {
 
     @FindBy(css = "#input-firstname")
     WebElement firstNameTxt;
-
     @FindBy(css = "#input-lastname")
     WebElement lastNameTxt;
-
     @FindBy(css = "#input-email")
     WebElement emailTxt;
-
     @FindBy(css = "#input-password")
     WebElement passwordTxt;
-
     @FindBy(css = ".text-end .form-check-input")
     WebElement checkPolicyBtn;
-
     @FindBy(css = ".btn.btn-primary")
     WebElement continueBtn;
-
     @FindBy(css = "#content>h1")
     WebElement msgConfirmation;
-
     @FindBy(css = "#error-firstname")
     WebElement errorMsgEmptyFirstName;
 
@@ -57,10 +48,6 @@ public class AccountRegistrationPage extends BasePage {
         checkPolicyBtn.click();
     }
 
-    public WebElement getCheckPolicyBtn() {
-        return checkPolicyBtn;
-    }
-
     public void clickContinue() {
         click(continueBtn);
     }
@@ -77,7 +64,5 @@ public class AccountRegistrationPage extends BasePage {
     public String getErrorMsgFirstName() {
         return getText(errorMsgEmptyFirstName);
     }
-
-
 
 }
